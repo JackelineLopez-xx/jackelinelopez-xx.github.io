@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 🌸 Light / 🌙 Dark Mode Toggle -->
   <div class="toggle-container">
     <button id="toggle-mode">🌙</button>
   </div>
 
+  <!-- 🧽 Navigation -->
   <nav class="navbar">
     <a href="index.html">🌷 About</a>
     <a href="projects.html">💻 Projects</a>
@@ -18,6 +20,7 @@
     <a href="contact.html">📫 Contact</a>
   </nav>
 
+  <!-- 📄 Main Content -->
   <main>
     <h1>My Resume</h1>
     <p>Here’s a little about me!</p>
@@ -26,15 +29,60 @@
       <li><strong>Skills:</strong> Python, JavaScript, Machine Learning, etc.</li>
       <li><strong>Experience:</strong> Your work experience (internships, personal projects)</li>
     </ul>
-    <a href="resume.pdf" download="JackelineLopez_Resume.pdf">Download My Resume</a>
+    <!-- Button to Download Resume -->
+    <a href="resume.pdf" download="JackelineLopez_Resume.pdf" class="download-link">Download My Resume</a>
   </main>
 
+  <!-- 🌟 Soft Star Cursor Effect -->
+  <script>
+    const stars = [];
+    document.addEventListener("mousemove", (e) => {
+      const star = document.createElement("div");
+      star.innerText = "✦";
+      star.style.position = "fixed";
+      star.style.left = e.pageX + "px";
+      star.style.top = e.pageY + "px";
+      star.style.pointerEvents = "none";
+      star.style.fontSize = "16px";
+      star.style.color = "rgba(255, 255, 255, 0.7)";
+      star.style.textShadow = "0 0 8px rgba(255,255,255,0.8)";
+      star.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
+      document.body.appendChild(star);
+      stars.push(star);
+
+      setTimeout(() => {
+        star.style.transform = "translateY(-20px)";
+        star.style.opacity = 0;
+      }, 10);
+
+      setTimeout(() => {
+        star.remove();
+        stars.shift();
+      }, 500);
+    });
+  </script>
+
+  <!-- 🌗 Light/Dark Mode Script -->
   <script>
     const toggleBtn = document.getElementById("toggle-mode");
+    // Check the mode on page load from localStorage
+    const savedMode = localStorage.getItem("mode");
+    if (savedMode === "dark") {
+      document.body.classList.add("dark-mode");
+      toggleBtn.textContent = "🌸"; // Change button to light mode icon
+    }
+
     toggleBtn.addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
-      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "🌸" : "🌙";
+      if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "🌸"; // Change button to light mode icon
+        localStorage.setItem("mode", "dark");
+      } else {
+        toggleBtn.textContent = "🌙"; // Change button to dark mode icon
+        localStorage.setItem("mode", "light");
+      }
     });
   </script>
 </body>
 </html>
+
