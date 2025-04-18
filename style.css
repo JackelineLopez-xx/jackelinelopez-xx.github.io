@@ -108,3 +108,26 @@ div:after {
 
 
 /* Add more custom styles for your page as needed */
+/* Styling for Lists on Projects and Resume pages */
+ul {
+  list-style-type: none;         /* Removes ugly default bullets */
+  padding-left: 0;               /* Gets rid of left indent */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.5;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
