@@ -1,0 +1,115 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+/* Body Layout */
+body {
+  background-color: #f0f0f0; /* Light mode background */
+  color: #333; /* Default text color */
+  font-family: 'Georgia', serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for dark/light mode */
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+  background-color: #121212; /* Dark mode background */
+  color: #ddd; /* Light text for dark mode */
+}
+
+/* Container for Toggle Button */
+.toggle-container {
+  margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Navbar Styling */
+.navbar {
+  width: 100%;
+  background-color: #efefef;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.navbar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff4d88; /* Pink hover effect */
+}
+
+/* Main content layout */
+main {
+  width: 90%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Toggle Button */
+button#toggle-mode {
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button#toggle-mode:hover {
+  background-color: #ff4d88; /* Hover effect for the button */
+  color: #fff;
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* General Paragraph Styling */
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Links */
+a {
+  color: #ff4d88;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Styling for Lists */
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Add more custom styles for your page as needed */
