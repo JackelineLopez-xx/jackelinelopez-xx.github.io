@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Jackeline Lopez</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="toggle-container">
+    <button id="toggle-mode">🌙</button>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html">🌷 About</a>
+    <a href="projects.html">💻 Projects</a>
+    <a href="resume.html">📄 Resume</a>
+    <a href="contact.html">📫 Contact</a>
+  </nav>
+
+  <main>
+    <h1>Contact Me</h1>
+    <p>If you have any questions or just want to say hi, reach out to me!</p>
+    <p>Email me at: <a href="mailto:jackeline.lopez@email.com">jackeline.lopez@email.com</a></p>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-mode");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "🌸" : "🌙";
+    });
+  </script>
+</body>
+</html>
