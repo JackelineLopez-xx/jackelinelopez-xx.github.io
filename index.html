@@ -4,174 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jackeline Lopez</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Georgia&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      background: #fef6fa;
-      color: #333;
-      font-family: 'Georgia', serif;
-      margin: 0;
-      padding-top: 80px;
-      transition: all 0.5s ease;
-    }
-
-    h1, h2 {
-      font-family: 'Dancing Script', cursive;
-      color: #c85cc3;
-      text-align: center;
-    }
-
-    p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    /* Sticky Nav */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #fff0f7;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
-      z-index: 1000;
-      box-shadow: 0 2px 10px #eec9f5;
-    }
-
-    nav a {
-      color: #c85cc3;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #7e2b8d;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    /* Dark Mode */
-    body.dark-mode {
-      background: #1c1c2e;
-      color: #fef6fa;
-    }
-
-    body.dark-mode nav {
-      background: #2e2e40;
-      box-shadow: 0 2px 10px #000;
-    }
-
-    body.dark-mode nav a {
-      color: #dcd0ff;
-    }
-
-    body.dark-mode h1, body.dark-mode h2 {
-      color: #dcd0ff;
-    }
-
-    /* Sparkles as Hearts */
-    .sparkle {
-      position: absolute;
-      font-size: 1rem;
-      color: #ff90d9;
-      pointer-events: none;
-      animation: sparkle-fade 0.6s ease-out;
-      z-index: 9999;
-    }
-
-    @keyframes sparkle-fade {
-      0% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(-20px) scale(1.5);
-      }
-    }
-
-    /* Toggle Button */
-    #theme-toggle {
-      position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">🌸 About</a>
-    <a href="#projects">🧠 Projects</a>
-    <a href="#resume">📄 Resume</a>
-    <a href="#contact">📬 Contact</a>
+  <!-- 🌸 Light / 🌙 Dark Mode Toggle -->
+  <div class="toggle-container">
+    <button id="toggle-mode">🌙</button>
+  </div>
+
+  <!-- 🧽 Navigation -->
+  <nav class="navbar">
+    <a href="index.html">🌷 About</a>
+    <a href="projects.html">💻 Projects</a>
+    <a href="resume.html">📄 Resume</a>
+    <a href="contact.html">📬 Contact</a>
   </nav>
 
-  <!-- Theme Toggle Button -->
-  <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+  <!-- 💖 Main Content -->
+  <main>
+    <h1 class="name">Jackeline Lopez</h1>
+    <p class="tagline">Aspiring Machine Learning Engineer | Making Tech Cute & Powerful 💻✨</p>
+  </main>
 
-  <!-- 💖 Sections -->
-  <section id="about">
-    <h1>Hi, I'm Jackeline Lopez 💻</h1>
-    <p>Future Machine Learning Engineer and tech girly, here to change the world one sparkle at a time ✨</p>
-  </section>
-
-  <section id="projects">
-    <h2>🧠 Projects</h2>
-    <p>Stay tuned for my coding projects, Python experiments, and AI fun!</p>
-  </section>
-
-  <section id="resume">
-    <h2>📄 Resume</h2>
-    <p>One day you'll click here and download my full resume... but not yet bestie!</p>
-  </section>
-
-  <section id="contact">
-    <h2>📬 Contact</h2>
-    <p>Want to connect? Hit me up on GitHub or LinkedIn (coming soon!)</p>
-  </section>
-
-  <!-- Theme Script -->
+  <!-- 🌟 Soft Star Cursor Effect -->
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
-
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark-mode');
-      themeToggle.textContent = body.classList.contains('dark-mode') ? '🌸' : '🌙';
-    }
-  </script>
-
-  <!-- Heart Sparkles Script -->
-  <script>
-    document.addEventListener("mousemove", function(e) {
-      const sparkle = document.createElement("div");
-      sparkle.className = "sparkle";
-      sparkle.innerText = "💕";
-      sparkle.style.left = e.pageX + "px";
-      sparkle.style.top = e.pageY + "px";
-      sparkle.style.position = "absolute";
-      document.body.appendChild(sparkle);
+    const stars = [];
+    document.addEventListener("mousemove", (e) => {
+      const star = document.createElement("div");
+      star.innerText = "✦";
+      star.style.position = "fixed";
+      star.style.left = e.pageX + "px";
+      star.style.top = e.pageY + "px";
+      star.style.pointerEvents = "none";
+      star.style.fontSize = "16px";
+      star.style.color = "rgba(255, 255, 255, 0.7)";
+      star.style.textShadow = "0 0 8px rgba(255,255,255,0.8)";
+      star.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
+      document.body.appendChild(star);
+      stars.push(star);
 
       setTimeout(() => {
-        sparkle.remove();
-      }, 600);
+        star.style.transform = "translateY(-20px)";
+        star.style.opacity = 0;
+      }, 10);
+
+      setTimeout(() => {
+        star.remove();
+        stars.shift();
+      }, 500);
+    });
+  </script>
+
+  <!-- 🌗 Light/Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById("toggle-mode");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "🌸" : "🌙";
     });
   </script>
 </body>
