@@ -16,25 +16,66 @@
       justify-content: center;
       min-height: 100vh;
       padding: 2rem;
+      transition: all 0.5s ease;
     }
+
     h1 {
       font-family: 'Dancing Script', cursive;
       font-size: 3rem;
       color: #c85cc3;
     }
+
     p {
       font-size: 1.2rem;
       max-width: 500px;
       text-align: center;
     }
+
+    #theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #1c1c2e;
+      color: #fef6fa;
+    }
+
+    body.dark-mode h1 {
+      color: #dcd0ff;
+    }
   </style>
 </head>
 <body>
+  <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+  
   <h1>Hi, I’m Jackeline Lopez 💻</h1>
   <p>
     Future Machine Learning Engineer. Making tech softer, smarter, and more inclusive.
     This is my very first website—built from scratch, by me ✨
   </p>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+
+      // Toggle icon between light and dark mode
+      if (body.classList.contains('dark-mode')) {
+        themeToggle.textContent = '🌸'; // Light mode icon
+      } else {
+        themeToggle.textContent = '🌙'; // Dark mode icon
+      }
+    }
+  </script>
 </body>
 </html>
 
