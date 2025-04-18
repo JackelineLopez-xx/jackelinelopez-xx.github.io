@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Jackeline Lopez</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="toggle-container">
+    <button id="toggle-mode">🌙</button>
+  </div>
+
+  <nav class="navbar">
+    <a href="index.html">🌷 About</a>
+    <a href="projects.html">💻 Projects</a>
+    <a href="resume.html">📄 Resume</a>
+    <a href="contact.html">📫 Contact</a>
+  </nav>
+
+  <main>
+    <h1>My Resume</h1>
+    <p>Here’s a little about me!</p>
+    <ul>
+      <li><strong>Education:</strong> Your degree and university</li>
+      <li><strong>Skills:</strong> Python, JavaScript, Machine Learning, etc.</li>
+      <li><strong>Experience:</strong> Your work experience (internships, personal projects)</li>
+    </ul>
+    <a href="resume.pdf" download="JackelineLopez_Resume.pdf">Download My Resume</a>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-mode");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "🌸" : "🌙";
+    });
+  </script>
+</body>
+</html>
