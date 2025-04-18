@@ -63,7 +63,19 @@ main {
   flex-grow: 1;
 }
 
-/* Toggle Button */
+/* Heading Styling */
+h1.name {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* Tagline Styling */
+p.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* Light/Dark Mode Toggle Button */
 button#toggle-mode {
   background-color: #f0f0f0;
   border: 2px solid #333;
@@ -79,37 +91,20 @@ button#toggle-mode:hover {
   color: #fff;
 }
 
-/* Heading Styling */
-h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+/* Soft Star Cursor Effect Styling */
+div {
+  transition: all 0.5s ease-out;
 }
 
-/* General Paragraph Styling */
-p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+div:after {
+  content: "✦";
+  position: absolute;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: transform 0.5s, opacity 0.5s;
 }
 
-/* Links */
-a {
-  color: #ff4d88;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Styling for Lists */
-ul {
-  list-style-type: none;
-}
-
-ul li {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
 
 /* Add more custom styles for your page as needed */
