@@ -65,6 +65,26 @@
       }
     });
   </script>
+    // ✅ Contact form success message + confetti!
+  const form = document.querySelector('.contact-form');
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent actual submission
+    successMessage.style.display = 'block';
+
+    // 🎊 Confetti effect
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+
+    form.reset(); // optional: clear form after submission
+  });
+</script>
+<!-- 🎉 Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   
   <!-- ✅ Success Message (Hidden by Default) -->
 <div id="success-message" style="display: none; margin-top: 20px;">
