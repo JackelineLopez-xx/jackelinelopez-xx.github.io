@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - Jackeline Lopez</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- 🌙 Toggle Mode Button -->
+
+  <!-- 🌙 Toggle Mode -->
   <div class="toggle-container">
     <button id="toggle-mode">🌙</button>
   </div>
@@ -21,33 +21,29 @@
     <a href="contact.html">📫 Contact</a>
   </nav>
 
-  <!-- 💌 Main Contact Card -->
+  <!-- 💌 Contact Section -->
   <main>
     <div class="contact-card">
       <h1>Let’s Connect 💌</h1>
       <p>If you have any questions or just want to say hi, reach out to me below!</p>
 
-      <!-- 💫 Buttons for Email + LinkedIn -->
+      <!-- ✨ Contact Links -->
       <div class="contact-links">
-        <a href="mailto:lopezjackeline299@gmail.com" target="_blank" class="sparkle-button">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-        <a href="https://www.linkedin.com/in/jackeline-lopez-5a1a54347/" target="_blank" class="sparkle-button">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
+        <a href="mailto:youremail@example.com" class="glow-link">📧 Email</a>
+        <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" class="glow-link">💼 LinkedIn</a>
       </div>
 
-      <!-- 💌 Contact Form -->
+      <!-- 📝 Contact Form -->
       <form class="contact-form">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <textarea rows="5" placeholder="Your Message 💖" required></textarea>
         <button type="submit" class="sparkle-button">Send ✨</button>
       </form>
     </div>
   </main>
 
-  <!-- 🌗 Dark Mode Script -->
+  <!-- 🌙 Dark Mode Script -->
   <script>
     const toggleBtn = document.getElementById("toggle-mode");
     const savedMode = localStorage.getItem("mode");
@@ -68,10 +64,11 @@
         localStorage.setItem("mode", "light");
       }
     });
-  </script> 
-  
+  </script>
+
 </body>
 </html>
+
 
 
 
