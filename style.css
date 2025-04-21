@@ -238,3 +238,26 @@ body.dark-mode .glow-link {
   align-items: center;
   margin: 30px 0 0;
 }
+#success-message {
+  text-align: center;
+  background-color: #eafaff;
+  border: 2px dashed #a1eafb;
+  padding: 20px;
+  border-radius: 15px;
+  color: #2c2c2c;
+  animation: popIn 0.5s ease;
+  box-shadow: 0 0 15px rgba(173, 216, 230, 0.4);
+}
+
+body.dark-mode #success-message {
+  background-color: #2a2a2a;
+  border-color: #55d1ff;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(85, 209, 255, 0.3);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
