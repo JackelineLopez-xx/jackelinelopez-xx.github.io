@@ -310,23 +310,62 @@
       }
     });
 
-    // 🎉 Form success + confetti
-    const form = document.querySelector('.contact-form');
-    const successMessage = document.getElementById('success-message');
+   <!-- ✨ EmailJS Script -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("KELhkmeQKDAPx2dzw"); // 🔑 Replace with your real EmailJS user/public key
+  })();
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  const toggleBtn = document.getElementById("toggle-mode");
+  const savedMode = localStorage.getItem("mode");
+
+  if (savedMode === "dark") {
+    document.body.classList.add("dark-mode");
+    toggleBtn.textContent = "🌸";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+      toggleBtn.textContent = "🌸";
+      localStorage.setItem("mode", "dark");
+    } else {
+      toggleBtn.textContent = "🌙";
+      localStorage.setItem("mode", "light");
+    }
+  });
+
+  // 💌 EmailJS Form Submission
+  const form = document.querySelector('.contact-form');
+  const successMessage = document.getElementById('success-message');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.send("service_j5s1hnc", "template_ilbp3qm", {
+      from_name: form.elements[0].value,
+      from_email: form.elements[1].value,
+      message: form.elements[2].value
+    }).then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
       successMessage.style.display = 'block';
+      form.reset();
 
       confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 }
       });
-
-      form.reset();
+    }, function(error) {
+      console.log('FAILED...', error);
+      alert("Oops! Something went wrong. Please try again later.");
     });
-  </script>
+  });
+</script>
+
+
 
 </body>
 </html>
