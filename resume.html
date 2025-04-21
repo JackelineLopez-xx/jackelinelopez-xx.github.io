@@ -1,18 +1,60 @@
+
+
+### 📄 `resume.html` 
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume - Jackeline Lopez</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .resume-preview {
+      width: 100%;
+      max-width: 800px;
+      height: 1000px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      display: block;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin: 20px auto;
+      background-color: #ffc4dd;
+      color: #333;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #ffc4dd80;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #ff69b4, 0 0 25px #ffb6c1;
+    }
+
+    body.dark-mode .download-btn {
+      background-color: #ff89c2;
+      color: #111;
+    }
+  </style>
 </head>
 <body>
-  <!-- 🌸 Light / 🌙 Dark Mode Toggle -->
+
+  <!-- 🌙 Toggle Mode -->
   <div class="toggle-container">
     <button id="toggle-mode">🌙</button>
   </div>
 
-  <!-- 🧽 Navigation -->
+  <!-- 🧭 Navbar -->
   <nav class="navbar">
     <a href="index.html">🌷 About</a>
     <a href="projects.html">💻 Projects</a>
@@ -20,54 +62,31 @@
     <a href="contact.html">📫 Contact</a>
   </nav>
 
-  <!-- 📄 Main Content -->
+  <!-- 💼 Resume Content -->
   <main>
     <h1>My Resume</h1>
-    <p>Here’s a little about me!</p>
-    <ul>
-      <li><strong>Education:</strong> Your degree and university</li>
-      <li><strong>Skills:</strong> Python, JavaScript, Machine Learning, etc.</li>
-      <li><strong>Experience:</strong> Your work experience (internships, personal projects)</li>
-    </ul>
-    <!-- Button to Download Resume -->
-    <a href="resume.pdf" download="JackelineLopez_Resume.pdf" class="download-link">Download My Resume</a>
+    <p>Here’s a preview of my latest resume. You can download it too 💖</p>
+
+    <!-- ✨ Resume Preview -->
+    <iframe
+      class="resume-preview"
+      src="JackelineLopez_Resume.pdf"
+      title="Resume Preview"
+    ></iframe>
+
+    <!-- 📥 Download Button -->
+    <div style="text-align: center;">
+      <a href="JackelineLopez_Resume.pdf" download class="download-btn">
+        Download My Resume 📄
+      </a>
+    </div>
   </main>
 
-  <!-- ✦ Star Cursor Effect -->
-  <script>
-    const stars = [];
-    document.addEventListener("mousemove", (e) => {
-      const star = document.createElement("div");
-      star.innerText = "✦";
-      star.style.position = "fixed";
-      star.style.left = e.pageX + "px";
-      star.style.top = e.pageY + "px";
-      star.style.pointerEvents = "none";
-      star.style.fontSize = "16px";
-      star.style.color = "rgba(255, 255, 255, 0.7)";
-      star.style.textShadow = "0 0 8px rgba(255,255,255,0.8)";
-      star.style.transition = "transform 0.5s ease-out, opacity 0.5s ease-out";
-      document.body.appendChild(star);
-      stars.push(star);
-
-      setTimeout(() => {
-        star.style.transform = "translateY(-20px)";
-        star.style.opacity = 0;
-      }, 10);
-
-      setTimeout(() => {
-        star.remove();
-        stars.shift();
-      }, 500);
-    });
-  </script>
-
-  <!-- 🌙 Dark Mode Toggle Script -->
+  <!-- 🌙 Dark Mode Script -->
   <script>
     const toggleBtn = document.getElementById("toggle-mode");
-
-    // Check if user had dark mode enabled before and apply it
     const savedMode = localStorage.getItem("mode");
+
     if (savedMode === "dark") {
       document.body.classList.add("dark-mode");
       toggleBtn.textContent = "🌸";
@@ -85,7 +104,9 @@
       }
     });
   </script>
+
 </body>
 </html>
+
 
 
